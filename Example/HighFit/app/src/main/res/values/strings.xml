@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">HighFit</string>
+    <string name="AreaChartName">Steps</string>
+    <string name="SplineChartName">Calories (Eaten)</string>
+    <string name="ColumnChartName">Calories (Burned)</string>
+    <string name="Dashboard">Dashboard</string>
+    <string name="Data">Data</string>
+    <string name="Exit">Exit</string>
+    <string name="copyright">Copyright © 2017 Highsoft AS. All rights reserved.</string>
+
+    <string name="title_activity_dashboard">DashboardActivity</string>
+
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_example">Example action</string>
+
+    <string name="action_settings">Settings</string>
+</resources>

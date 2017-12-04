@@ -1,0 +1,29 @@
+[
+    {
+        "title": "Steps",
+        "subtitle": "",
+        "source": "DataSteps",
+        "unit": "steps",
+        "chartType": "area",
+        "icon": "ic_directions_walk",
+        "exporting": false
+    },
+    {
+        "title": "Calories (Burned)",
+        "subtitle": "",
+        "source": "DataCaloriesOut",
+        "unit": "kcal",
+        "chartType": "column",
+        "icon": "ic_whatshot",
+        "exporting": false
+     },
+     {
+         "title": "Calories (Eaten)",
+         "subtitle": "",
+         "source": "DataCaloriesIn",
+         "unit": "kcal",
+         "chartType": "spline",
+         "icon": "ic_local_dining",
+         "exporting": false
+     }
+ ]
