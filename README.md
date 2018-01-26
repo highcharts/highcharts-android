@@ -27,7 +27,7 @@ Here we present how to create basic chart and place it in your project.
 
 - First of all download Highcharts framework. 
 
-**A)** You can download the _aar_ from here: [Highcharts](link) and add it manually. Put the _aar_ in the _libs_ folder in your project structure:
+**A)** You can download the _aar_ from here: [Highcharts](https://github.com/highcharts/highcharts-android/blob/master/highcharts-release.aar) and add it manually. Put the _aar_ in the _libs_ folder in your project structure:
 
 ![alt text](https://github.com/spinneyio/highcharts-android/blob/deployReady/Release/Images/1.png "Files1")
 
@@ -112,7 +112,7 @@ Let's start with creating simple chart!
 
 For the purpose of this tutorial, we will create a simple column chart using random data.
 
-The heart of a chart is **HIOptions** class which contains all the information needed to present it. Some of the options there are optional, some are not (see demo app [HighFit](link) provided by Highcharts). 
+The heart of a chart is **HIOptions** class which contains all the information needed to present it. Some of the options there are optional, some are not (see demo app [HighFit](https://github.com/highcharts/highcharts-android/tree/master/Example/HighFit) provided by Highcharts). 
 
 Create instance of **HIOptions** class
 ```java
@@ -198,5 +198,5 @@ public class MainActivity extends AppCompatActivity {
 ```
 
 ## ***Press "Run" in your IDE.***
-#### For more complex solutions see demo app [HighFit](link) provided by Highcharts or read the following [documentation](https://api.highcharts.com/android/highcharts/)!
+#### For more complex solutions see demo app [HighFit](https://github.com/highcharts/highcharts-android/tree/master/Example/HighFit) provided by Highcharts or read the following [documentation](https://api.highcharts.com/android/highcharts/)!
 

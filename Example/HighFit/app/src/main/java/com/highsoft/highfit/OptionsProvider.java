@@ -34,22 +34,10 @@ public class OptionsProvider {
 
             HIChart chart = new HIChart();
 
-            /*Gradient stuff for background color*/
-            Map<String, Number> gradientPoints = new HashMap<>();
-            gradientPoints.put("x1", 0);
-            gradientPoints.put("y1", 0);
-            gradientPoints.put("x2", 0);
-            gradientPoints.put("y2", 1);
-            List<List> gradientColors = new ArrayList<>();
-            List<Object> l1 = new LinkedList<>();
-            l1.add(0);
-            l1.add("rgb(102, 153, 161)");
-            List<Object> l2 = new LinkedList<>();
-            l2.add(1);
-            l2.add("rgb(128, 135, 232)");
-            gradientColors.add(l1);
-            gradientColors.add(l2);
-            chart.backgroundColor = HIColor.initWithLinearGradient(gradientPoints, gradientColors);
+            HIGradient gradient = new HIGradient(0, 0, 0, 1);
+            LinkedList<HIStop> stops = new LinkedList<>();
+            stops.add(new HIStop(0, HIColor.initWithRGB(102, 153, 161)));
+            chart.backgroundColor = HIColor.initWithLinearGradient(gradient, stops);
             chart.borderRadius = 6.0;
             chart.type = options.get("chartType");
             hiOptions.chart = chart;
@@ -68,22 +56,11 @@ public class OptionsProvider {
 
             HIPlotOptions plotOptions = new HIPlotOptions();
             plotOptions.area = new HIArea();
-            /*Gradient stuff for background color*/
-            Map<String, Number> fillGradientPoints = new HashMap<>();
-            fillGradientPoints.put("x1", 0);
-            fillGradientPoints.put("y1", 0);
-            fillGradientPoints.put("x2", 0);
-            fillGradientPoints.put("y2", 300);
-            List<List> fillGradientColors = new ArrayList<>();
-            List<Object> g1 = new LinkedList<>();
-            g1.add(0);
-            g1.add("rgba(255, 255, 255, 0.75)");
-            List<Object> g2 = new LinkedList<>();
-            g2.add(1);
-            g2.add("rgba(255, 255, 255, 0.02)");
-            fillGradientColors.add(g1);
-            fillGradientColors.add(g2);
-            plotOptions.area.fillColor = HIColor.initWithLinearGradient(fillGradientPoints, fillGradientColors);
+            HIGradient fillGradient = new HIGradient(0, 0, 0, 1);
+            LinkedList<HIStop> fillStops = new LinkedList<>();
+            fillStops.add(new HIStop(0, HIColor.initWithRGBA(255, 255, 255, 0.75)));
+            fillStops.add(new HIStop(1, HIColor.initWithRGBA(255, 255, 255, 0.02)));
+            plotOptions.area.fillColor = HIColor.initWithLinearGradient(fillGradient, fillStops);
             hiOptions.plotOptions = plotOptions;
 
             HICredits credits = new HICredits();
@@ -164,22 +141,11 @@ public class OptionsProvider {
 
             HIChart chart = new HIChart();
 
-            /*Gradient stuff for background color*/
-            Map<String, Number> gradientPoints = new HashMap<>();
-            gradientPoints.put("x1", 0);
-            gradientPoints.put("y1", 0);
-            gradientPoints.put("x2", 0);
-            gradientPoints.put("y2", 1);
-            List<List> gradientColors = new ArrayList<>();
-            List<Object> l1 = new LinkedList<>();
-            l1.add(0);
-            l1.add("rgb(66, 218, 113)");
-            List<Object> l2 = new LinkedList<>();
-            l2.add(1);
-            l2.add("rgb(80, 140, 200)");
-            gradientColors.add(l1);
-            gradientColors.add(l2);
-            chart.backgroundColor = HIColor.initWithLinearGradient(gradientPoints, gradientColors);
+            HIGradient gradient = new HIGradient(0, 0, 0, 1);
+            LinkedList<HIStop> stops = new LinkedList<>();
+            stops.add(new HIStop(0, HIColor.initWithRGB(66, 218, 113)));
+            stops.add(new HIStop(1, HIColor.initWithRGB(80, 140, 200)));
+            chart.backgroundColor = HIColor.initWithLinearGradient(gradient, stops);
             chart.borderRadius = 6;
             chart.type = options.get("chartType");
             hioptions.chart = chart;
@@ -224,6 +190,9 @@ public class OptionsProvider {
 
             HISubtitle subtitle = new HISubtitle();
             subtitle.text = options.get("subtitle");
+            if (subtitle.text.length() > 0) {
+                subtitle.text = subtitle.text + " total";
+            }
             HashMap<String, String> subtitleStyle = new HashMap<>();
             subtitleStyle.put("fontFamily", "Arial");
             subtitleStyle.put("fontSize", "9px");
@@ -283,22 +252,11 @@ public class OptionsProvider {
 
             HIChart chart = new HIChart();
 
-            /*Gradient stuff for background color*/
-            Map<String, Number> gradientPoints = new HashMap<>();
-            gradientPoints.put("x1", 0);
-            gradientPoints.put("y1", 0);
-            gradientPoints.put("x2", 0);
-            gradientPoints.put("y2", 1);
-            List<List> gradientColors = new ArrayList<>();
-            List<Object> l1 = new LinkedList<>();
-            l1.add(0);
-            l1.add("rgb(132, 103, 144)");
-            List<Object> l2 = new LinkedList<>();
-            l2.add(1);
-            l2.add("rgb(163, 95, 103)");
-            gradientColors.add(l1);
-            gradientColors.add(l2);
-            chart.backgroundColor = HIColor.initWithLinearGradient(gradientPoints, gradientColors);
+            HIGradient gradient = new HIGradient(0, 0, 0, 1);
+            LinkedList<HIStop> stops = new LinkedList<>();
+            stops.add(new HIStop(0, HIColor.initWithRGB(132, 103, 144)));
+            stops.add(new HIStop(1, HIColor.initWithRGB(163, 95, 103)));
+            chart.backgroundColor = HIColor.initWithLinearGradient(gradient, stops);
             chart.borderRadius = 6;
             chart.type = options.get("chartType");
             hioptions.chart = chart;
