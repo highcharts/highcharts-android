@@ -10,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
-import com.highsoft.highcharts.Core.HIGChartView;
+import com.highsoft.highcharts.Core.HIChartView;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -46,7 +46,7 @@ public class ColumnChartFragment extends Fragment {
         super.onStart();
         View view = getView();
         if(view !=null){
-            final HIGChartView chartView = (HIGChartView) view.findViewById(R.id.column);
+            final HIChartView chartView = (HIChartView) view.findViewById(R.id.column);
             float height = getResources().getDisplayMetrics().heightPixels;
             chartView.getLayoutParams().height = Math.round(height*2/5);
             final Context c = view.getContext();

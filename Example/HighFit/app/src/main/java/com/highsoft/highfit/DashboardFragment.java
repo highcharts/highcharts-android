@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-import com.highsoft.highcharts.Core.HIGChartView;
+import com.highsoft.highcharts.Core.HIChartView;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -39,9 +39,9 @@ public class DashboardFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_charts_dashboard, container, false);
 
-        HIGChartView areaView = (HIGChartView) view.findViewById(R.id.area);
-        HIGChartView splineView = (HIGChartView) view.findViewById(R.id.spline);
-        HIGChartView columnView = (HIGChartView) view.findViewById(R.id.column);
+        HIChartView areaView = (HIChartView) view.findViewById(R.id.area);
+        HIChartView splineView = (HIChartView) view.findViewById(R.id.spline);
+        HIChartView columnView = (HIChartView) view.findViewById(R.id.column);
         areaView.setWillNotDraw(true);
         splineView.setWillNotDraw(true);
         columnView.setWillNotDraw(true);

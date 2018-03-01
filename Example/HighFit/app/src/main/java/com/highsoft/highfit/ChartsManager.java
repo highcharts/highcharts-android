@@ -4,7 +4,7 @@ import android.content.Context;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.highsoft.highcharts.Core.HIGChartView;
+import com.highsoft.highcharts.Core.HIChartView;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -21,8 +21,8 @@ public class ChartsManager {
 
     private String title;
 
-    HIGChartView setChart(
-            HIGChartView chartView,
+    HIChartView setChart(
+            HIChartView chartView,
             Context c,
             String chartType,
             String dataFilename,
@@ -61,7 +61,7 @@ public class ChartsManager {
 
 
     void updateChart(
-            HIGChartView chartView,
+            HIChartView chartView,
             Context c,
             String chartType,
             String dataFilename,
