@@ -1,5 +1,5 @@
 <p align="center" >
-<img src="https://github.com/spinneyio/highcharts-android/blob/deployReady/Release/Images/logo.png" alt="Highcharts" title="Highcharts">
+<img src="https://github.com/highcharts/highcharts-android/blob/master/Images/logo.png" alt="Highcharts" title="Highcharts">
 </p>
 
 [Highcharts Android](http://www.highcharts.com/blog/mobile/) is a delightful wrapper of HighchartsJS for Android.
@@ -29,7 +29,7 @@ Here we present how to create basic chart and place it in your project.
 
 **A)** You can download the _aar_ from here: [Highcharts](https://github.com/highcharts/highcharts-android/blob/master/highcharts-release.aar) and add it manually. Put the _aar_ in the _libs_ folder in your project structure:
 
-![alt text](https://github.com/spinneyio/highcharts-android/blob/deployReady/Release/Images/1.png "Files1")
+![alt text](https://github.com/highcharts/highcharts-android/blob/master/Images/1.png "Files1")
 
 Then, add the following lines to your project **build.gradle** file:
 
@@ -71,7 +71,7 @@ and the needed _provider_paths_ file
 ```
 into _xml_ folder here:
 
-![alt text](https://github.com/spinneyio/highcharts-android/blob/deployReady/Release/Images/2.png "Files2")
+![alt text](https://github.com/highcharts/highcharts-android/blob/master/Images/2.png "Files2")
 
 You are now set to use Highcharts!
 
