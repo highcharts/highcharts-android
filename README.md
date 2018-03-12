@@ -36,20 +36,25 @@ Then, add the following lines to your project **build.gradle** file:
     repositories {
         flatDir {
             dirs ‘libs’
-	}
+	    }
+    }
 
 and following to the dependencies in your app **build.gradle** file:
 
     dependencies {
         compile (name: 'highcharts-release', ext:'aar')
+	compile 'com.google.code.gson:gson:2.8.0'
     }
 
-**B)** You can add the library to the gradle dependecies from JCenter like this:
+**B)** **Not available yet**
+
+ You can add the library to the gradle dependecies from JCenter like this:
 
     dependencies {
         compile 'com.highsoft.highcharts:6.0.2'
-    }
-    
+	compile 'com.google.code.gson:gson:2.8.0'
+    }  
+
 - Please note that if you plan to use export module, you need to put specific _provider_ in your app manifest:
 
 ```xml
@@ -81,7 +86,7 @@ You are now set to use Highcharts!
 
 At first, you need to create a **view** for your chart. Go to your `activity_main.xml` and add this to your layout:
 ```
-<com.highsoft.highcharts.Core.HIGChartView
+<com.highsoft.highcharts.Core.HIChartView
    android:id="@+id/hc"
    android:layout_width="match_parent"
    android:layout_height="match_parent" />
@@ -97,7 +102,7 @@ import com.highsoft.highcharts.Core.*;
 import com.highsoft.highcharts.Common.HIChartsClasses.*;
 ```
 
-Next, in **onCreate** add the **HIGChartView** following line:
+Next, in **onCreate** add the **HIChartView** following line:
 ```java
 HIGChartView chartView = (HIGChartView) findViewById(R.id.hc);
 ```
@@ -174,7 +179,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        HIGChartView chartView = (HIGChartView) findViewById(R.id.hc);
+        HIChartView chartView = (HIChartView) findViewById(R.id.hc);
 
         HIOptions options = new HIOptions();
 
