@@ -2,11 +2,13 @@
 <img src="https://github.com/highcharts/highcharts-android/blob/master/Images/logo.png" alt="Highcharts" title="Highcharts">
 </p>
 
+[ ![Download](https://api.bintray.com/packages/highsoft/Highcharts/Highcharts/images/download.svg?version=6.0.7) ](https://bintray.com/highsoft/Highcharts/Highcharts/6.0.7/link)
+
 [Highcharts Android](http://www.highcharts.com/blog/mobile/) is a delightful wrapper of HighchartsJS for Android.
 
 The most popular, robust and battle-tested JavaScript Charting library is now available for Android with our new Java wrapper. Get gorgeous, multi-touch charts with minimal effort.
 
-## Documentation
+# Documentation
 
 Access the full [API documentation](https://api.highcharts.com/android/highcharts/) here.
 
@@ -25,68 +27,54 @@ Here we present how to create basic chart and place it in your project.
 
 ## Preparing your project
 
-- First of all download Highcharts framework. 
+- First of all download the Highcharts framework. 
 
-**A)** You can download the _aar_ from here: [Highcharts](https://github.com/highcharts/highcharts-android/blob/master/highcharts-release.aar) and add it manually. Put the _aar_ in the _libs_ folder in your project structure:
+**A)** You can add the library to the gradle dependecies from Bintray:
 
-![alt text](https://github.com/highcharts/highcharts-android/blob/master/Images/1.png "Files1")
-
-Then, add the following lines to your project **build.gradle** file:
-
-    repositories {
-        flatDir {
-            dirs ‘libs’
-	    }
+Add the Highcharts repository to your **build.gradle** file:
+```gradle
+repositories { 
+    maven { 
+        url "https://highsoft.bintray.com/Highcharts" 
     }
-
+}
+```
 and following to the dependencies in your app **build.gradle** file:
+```gradle
+dependencies {
+    compile 'com.highsoft.highcharts:highcharts:6.0.7'
+}
+```
+**B)** You can download the _aar_ from [here](https://github.com/highcharts/highcharts-android/releases) and add it manually if you want. Put the _aar_ in the _libs_ folder in your project structure:
 
-    dependencies {
-        compile (name: 'highcharts-release', ext:'aar')
-	compile 'com.google.code.gson:gson:2.8.0'
+![Project structure screenshot](https://github.com/highcharts/highcharts-android/blob/master/Images/1.png "Files1")
+
+Then, add the following lines to your **build.gradle** file in `repositories`:
+```gradle
+repositories {
+    flatDir {
+        dirs 'libs'
     }
-
-**B)** **Not available yet**
-
- You can add the library to the gradle dependecies from JCenter like this:
-
-    dependencies {
-        compile 'com.highsoft.highcharts:6.0.2'
-	compile 'com.google.code.gson:gson:2.8.0'
-    }  
-
-- Please note that if you plan to use export module, you need to put specific _provider_ in your app manifest:
-
-```xml
-<provider android:authorities="com.your.package.name.FileProvider"
-   android:name="android.support.v4.content.FileProvider"
-   android:exported="false"
-   android:grantUriPermissions="true">
-   <meta-data
-       android:name="android.support.FILE_PROVIDER_PATHS"
-       android:resource="@xml/provider_paths"/>
-</provider>
+}
 ```
-and the needed _provider_paths_ file
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<paths>
-   <files-path name="export" path="." />
-</paths>
+and following to the dependencies in your app **build.gradle** file:
+```gradle
+dependencies {
+    compile (name: 'highcharts-release', ext:'aar')
+    compile 'com.google.code.gson:gson:2.8.0'
+}
 ```
-into _xml_ folder here:
-
-![alt text](https://github.com/highcharts/highcharts-android/blob/master/Images/2.png "Files2")
 
 You are now set to use Highcharts!
+
 
 ## Using Highcharts (demo app)
 
 ### Prepare the layout
 
 At first, you need to create a **view** for your chart. Go to your `activity_main.xml` and add this to your layout:
-```
-<com.highsoft.highcharts.Core.HIChartView
+```xml
+<com.highsoft.highcharts.Core.HIGChartView
    android:id="@+id/hc"
    android:layout_width="match_parent"
    android:layout_height="match_parent" />
@@ -104,7 +92,7 @@ import com.highsoft.highcharts.Common.HIChartsClasses.*;
 
 Next, in **onCreate** add the **HIChartView** following line:
 ```java
-HIGChartView chartView = (HIGChartView) findViewById(R.id.hc);
+HIChartView chartView = (HIChartView) findViewById(R.id.hc);
 ```
 
 This will create our chartView with the size defined in **layout**.
@@ -143,7 +131,7 @@ Now we need to add some data (in this tutorial it will be some random set of num
 ```java
 HIColumn series = new HIColumn();
 ```
-To add data, just create array an ArrayList with our data objects
+To add data, just create an ArrayList with our data objects
 ```java
 series.data = new ArrayList<>(Arrays.asList(49.9, 71.5, 106.4, 129.2, 144, 176, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4));
 ```
@@ -179,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        HIChartView chartView = (HIChartView) findViewById(R.id.hc);
+        HIGChartView chartView = (HIGChartView) findViewById(R.id.hc);
 
         HIOptions options = new HIOptions();
 
@@ -199,9 +187,76 @@ public class MainActivity extends AppCompatActivity {
         chartView.options = options;
     }
 }
-
 ```
-
-## ***Press "Run" in your IDE.***
+## ***Press "Run" in Android Studio.***
 #### For more complex solutions see demo app [HighFit](https://github.com/highcharts/highcharts-android/tree/master/Example/HighFit) provided by Highcharts or read the following [documentation](https://api.highcharts.com/android/highcharts/)!
+
+# Additional info
+#### Export module requirements
+Please note that if you plan to use export module, you need to put specific _provider_ in your app manifest:
+```xml
+<provider android:authorities="com.your.package.name.FileProvider"
+   android:name="android.support.v4.content.FileProvider"
+   android:exported="false"
+   android:grantUriPermissions="true">
+   <meta-data
+       android:name="android.support.FILE_PROVIDER_PATHS"
+       android:resource="@xml/provider_paths"/>
+</provider>
+```
+and the needed _provider_paths_ file
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+   <files-path name="export" path="." />
+</paths>
+```
+into _xml_ folder here:
+
+![xml folder location screenshot](https://github.com/highcharts/highcharts-android/blob/master/Images/2.png "Files2")
+
+
+#### HIColor example
+Highcharts Android wrapper provides its own colors implementation. As you can notice, some options are of `HIColor` type. You can instantiate the desired color in few ways which are described in the [API documentation](https://api.highcharts.com/android/highcharts/). In here, we will show the most complex case which is gradient usage.
+First, you need to create the `HIGradient` (you can use base constructor with default values too):
+```java
+HIGradient gradient = new HIGradient(0, 0.5f, 1, 1);
+```
+Next, you should define `HIStop`'s:
+```java
+LinkedList<HIStop> stops = new LinkedList<>();
+stops.add(new HIStop(0.4f, HIColor.initWithRGB(160, 160, 160)));
+stops.add(new HIStop(1, HIColor.initWithRGB(60, 60, 60)));
+```
+Now you can instantiate a color thanks to those objects for, let's say, chart background:
+```java
+HIChart chart = new HIChart();
+chart.backgroundColor = HIColor.initWithLinearGradient(gradient, stops);
+```
+#### HIFunction example
+Thanks to Highcharts Android wrapper you can now assign native Android callbacks to on click events for specific chart elements. We will show you a small taste of such usage. For these purpose we will let appear a simple Toast with point coordinates when it's clicked but keep in mind that you can achieve much more with `HIFunction` mechanism! 
+
+First of all, you need to create a series:
+```java
+HISpline spline = new HISpline();
+spline.data = new ArrayList<>(Arrays.asList(0.3,5.3,8.0,9.1,3.2,5.4,4.0,4.2,2.1,10.0));
+```
+Now, you can refer to the point event and add on click callback like this:
+```java
+spline.point = new HIPoint();
+spline.point.events = new HIEvents();
+spline.point.events.click = new HIFunction(
+        f -> {
+            Toast t = Toast.makeText(
+                this,
+                "Clicked point [ " + f.getProperty("x") + ", " + f.getProperty("y") + " ]",
+                Toast.LENGTH_SHORT);
+                t.show();
+            },
+            new String[] {"x", "y"}
+);
+```
+As you can see in the above code snippet first argument of the `HIFunction` is the actual callback defined in the lambda expression. Second argument is simple array of chart elements. We need to put them here to let wrapper pull them for us during `HIFunction` instantiation. Thanks to this, we can refer to these elements corresponding values by `getProperty()` method. You can pull any data from chart like this. Depending on the current needs you can just run some code, withdraw data from chart, return a String to the chart (e.g. in HITooltip formatter) and even put pure Javascript function in the constructor in the String format. For more information feel free to check the [API documentation](https://api.highcharts.com/android/highcharts/).
+
+
 
