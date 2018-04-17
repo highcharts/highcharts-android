@@ -3,7 +3,11 @@ package com.highsoft.highfit;
 import com.highsoft.highcharts.Common.*;
 import com.highsoft.highcharts.Common.HIChartsClasses.*;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
 
 public class OptionsProvider {
 
