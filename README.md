@@ -74,7 +74,7 @@ You are now set to use Highcharts!
 
 At first, you need to create a **view** for your chart. Go to your `activity_main.xml` and add this to your layout:
 ```xml
-<com.highsoft.highcharts.Core.HIGChartView
+<com.highsoft.highcharts.Core.HIChartView
    android:id="@+id/hc"
    android:layout_width="match_parent"
    android:layout_height="match_parent" />
@@ -167,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        HIGChartView chartView = (HIGChartView) findViewById(R.id.hc);
+        HIChartView chartView = (HIChartView) findViewById(R.id.hc);
 
         HIOptions options = new HIOptions();
 
