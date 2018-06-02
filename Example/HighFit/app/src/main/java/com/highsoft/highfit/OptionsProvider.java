@@ -41,107 +41,107 @@ public class OptionsProvider {
             HIGradient gradient = new HIGradient(0, 0, 0, 1);
             LinkedList<HIStop> stops = new LinkedList<>();
             stops.add(new HIStop(0, HIColor.initWithRGB(102, 153, 161)));
-            chart.backgroundColor = HIColor.initWithLinearGradient(gradient, stops);
-            chart.borderRadius = 6.0;
-            chart.type = options.get("chartType");
-            hiOptions.chart = chart;
+            chart.setBackgroundColor(HIColor.initWithLinearGradient(gradient, stops));
+            chart.setBorderRadius(6.0);
+            chart.setType(options.get("chartType"));
+            hiOptions.setChart(chart);
 
             HIExporting exporting = new HIExporting();
-            exporting.enabled = Boolean.valueOf(options.get("export"));
-            hiOptions.exporting = exporting;
+            exporting.setEnabled(Boolean.valueOf(options.get("export")));
+            hiOptions.setExporting(exporting);
 
             HINavigation navigation = new HINavigation();
-            navigation.buttonOptions = new HIButtonOptions();
-            navigation.buttonOptions.symbolStroke = HIColor.initWithRGBA(255,255,255,0.4);
+            navigation.setButtonOptions(new HIButtonOptions());
+            navigation.getButtonOptions().setSymbolStroke(HIColor.initWithRGBA(255,255,255,0.4));
             HITheme theme = new HITheme();
-            theme.fill = "rgba(0,0,0,0.0)";
-            navigation.buttonOptions.theme =  theme;
-            hiOptions.navigation = navigation;
+            theme.setFill("rgba(0,0,0,0.0)");
+            navigation.getButtonOptions().setTheme(theme);
+            hiOptions.setNavigation(navigation);
 
             HIPlotOptions plotOptions = new HIPlotOptions();
-            plotOptions.area = new HIArea();
+            plotOptions.setArea(new HIArea());
             HIGradient fillGradient = new HIGradient(0, 0, 0, 1);
             LinkedList<HIStop> fillStops = new LinkedList<>();
             fillStops.add(new HIStop(0, HIColor.initWithRGBA(255, 255, 255, 0.75)));
             fillStops.add(new HIStop(1, HIColor.initWithRGBA(255, 255, 255, 0.02)));
-            plotOptions.area.fillColor = HIColor.initWithLinearGradient(fillGradient, fillStops);
-            hiOptions.plotOptions = plotOptions;
+            plotOptions.getArea().setFillColor(HIColor.initWithLinearGradient(fillGradient, fillStops));
+            hiOptions.setPlotOptions(plotOptions);
 
             HICredits credits = new HICredits();
-            credits.enabled = true;
-            credits.text = "www.highcharts.com";
+            credits.setEnabled(true);
+            credits.setText("www.highcharts.com");
             HIStyle creditsStyle = new HIStyle();
-            creditsStyle.color = "rgba(255, 255, 255, 0.6)";
-            credits.style = creditsStyle;
-            hiOptions.credits = credits;
+            creditsStyle.setColor("rgba(255, 255, 255, 0.6)");
+            credits.setStyle(creditsStyle);
+            hiOptions.setCredits(credits);
 
             HITitle title = new HITitle();
-            title.text = options.get("title");
-            title.align = "left";
+            title.setText(options.get("title"));
+            title.setAlign("left");
             HIStyle titleStyle = new HIStyle();
-            titleStyle.fontFamily = "Arial";
-            titleStyle.fontSize = "14px";
-            titleStyle.color = "rgba(255, 255, 255, 0.6)";
-            title.style = titleStyle;
-            title.y = 16;
-            hiOptions.title = title;
+            titleStyle.setFontFamily("Arial");
+            titleStyle.setFontSize("14px");
+            titleStyle.setColor("rgba(255, 255, 255, 0.6)");
+            title.setStyle(titleStyle);
+            title.setY(16);
+            hiOptions.setTitle(title);
 
             HISubtitle subtitle = new HISubtitle();
-            subtitle.text = options.get("subtitle");
-            if(subtitle.text.length() > 0) subtitle.text = subtitle.text + " total";
-            subtitle.align = "left";
+            subtitle.setText(options.get("subtitle"));
+            if(subtitle.getText().length() > 0) subtitle.setText(subtitle.getText() + " total");
+            subtitle.setAlign( "left");
             HashMap<String, String> subtitleStyle = new HashMap<>();
             subtitleStyle.put("fontFamily", "Arial");
             subtitleStyle.put("fontSize", "9px");
             subtitleStyle.put("color", "rgba(255, 255, 255, 0.6)");
-            subtitle.style = subtitleStyle;
-            subtitle.y = 28;
-            hiOptions.subtitle = subtitle;
+            subtitle.setStyle(subtitleStyle);
+            subtitle.setY(28);
+            hiOptions.setSubtitle(subtitle);
 
             final HIXAxis xaxis = new HIXAxis();
-            xaxis.tickColor = HIColor.initWithRGBA(255, 255, 255, 0.0);
-            xaxis.lineColor = HIColor.initWithRGBA(255, 255, 255, 0.3);
-            xaxis.labels = new HILabels();
+            xaxis.setTickColor(HIColor.initWithRGBA(255, 255, 255, 0.0));
+            xaxis.setLineColor(HIColor.initWithRGBA(255, 255, 255, 0.3));
+            xaxis.setLabels(new HILabels());
             HIStyle xaxisStyle = new HIStyle();
-            xaxisStyle.color = "rgb(255, 255, 255)";
-            xaxisStyle.fontSize = "10px";
-            xaxisStyle.fontFamily = "Arial";
-            xaxis.labels.style = xaxisStyle;
-            xaxis.labels.step = step;
-            xaxis.categories = new ArrayList<>(Arrays.asList(categories));
-            hiOptions.xAxis = new ArrayList<HIXAxis>(){{add(xaxis);}};
+            xaxisStyle.setColor("rgb(255, 255, 255)");
+            xaxisStyle.setFontSize("10px");
+            xaxisStyle.setFontFamily("Arial");
+            xaxis.getLabels().setStyle(xaxisStyle);
+            xaxis.getLabels().setStep(step);
+            xaxis.setCategories(new ArrayList<>(Arrays.asList(categories)));
+            hiOptions.setXAxis(new ArrayList<HIXAxis>(){{add(xaxis);}});
 
             final HIYAxis yaxis = new HIYAxis();
-            yaxis.lineColor = HIColor.initWithRGBA(255, 255, 255, 0.3);
-            yaxis.lineWidth = 1;
-            yaxis.gridLineWidth = 0;
-            yaxis.labels = new HILabels();
+            yaxis.setLineColor(HIColor.initWithRGBA(255, 255, 255, 0.3));
+            yaxis.setLineWidth(1);
+            yaxis.setGridLineWidth(0);
+            yaxis.setLabels(new HILabels());
             HIStyle yaxisStyle = new HIStyle();
-            yaxisStyle.color = "rgb(255, 255, 255)";
-            yaxisStyle.fontFamily = "Arial";
-            yaxisStyle.fontSize = "10px";
-            yaxis.labels.style = yaxisStyle;
-            yaxis.labels.x = -5;
-            yaxis.title = new HITitle();
-            yaxis.title.text = "";
-            hiOptions.yAxis = new ArrayList<HIYAxis>(){{add(yaxis);}};
+            yaxisStyle.setColor("rgb(255, 255, 255)");
+            yaxisStyle.setFontFamily("Arial");
+            yaxisStyle.setFontSize("10px");
+            yaxis.getLabels().setStyle(yaxisStyle);
+            yaxis.getLabels().setX(-5);
+            yaxis.setTitle(new HITitle());
+            yaxis.getTitle().setText("");
+            hiOptions.setYAxis(new ArrayList<HIYAxis>(){{add(yaxis);}});
 
             final HIArea area = new HIArea();
-            area.tooltip = new HITooltip();
-            area.tooltip.headerFormat = "";
-            area.tooltip.valueSuffix = " steps";
-            area.showInLegend = false;
-            area.data = series;
-            area.color = HIColor.initWithRGB(255, 255, 255);
-            area.name = options.get("title");
-            hiOptions.series = new ArrayList<HISeries>(){{add(area);}};
+            area.setTooltip(new HITooltip());
+            area.getTooltip().setHeaderFormat("");
+            area.getTooltip().setValueSuffix(" steps");
+            area.setShowInLegend(false);
+            area.setData(series);
+            area.setColor(HIColor.initWithRGB(255, 255, 255));
+            area.setName(options.get("title"));
+            hiOptions.setSeries(new ArrayList<HISeries>(){{add(area);}});
 
             return hiOptions;
         }
 
         if(options.get("chartType").equals("column")){
 
-            HIOptions hioptions = new HIOptions();
+            HIOptions hiOptions = new HIOptions();
 
             HIChart chart = new HIChart();
 
@@ -149,110 +149,110 @@ public class OptionsProvider {
             LinkedList<HIStop> stops = new LinkedList<>();
             stops.add(new HIStop(0, HIColor.initWithRGB(66, 218, 113)));
             stops.add(new HIStop(1, HIColor.initWithRGB(80, 140, 200)));
-            chart.backgroundColor = HIColor.initWithLinearGradient(gradient, stops);
-            chart.borderRadius = 6;
-            chart.type = options.get("chartType");
-            hioptions.chart = chart;
+            chart.setBackgroundColor(HIColor.initWithLinearGradient(gradient, stops));
+            chart.setBorderRadius(6);
+            chart.setType(options.get("chartType"));
+            hiOptions.setChart(chart);
 
             HIExporting exporting = new HIExporting();
-            exporting.enabled = Boolean.valueOf(options.get("export"));
-            hioptions.exporting = exporting;
+            exporting.setEnabled(Boolean.valueOf(options.get("export")));
+            hiOptions.setExporting(exporting);
 
             HINavigation navigation = new HINavigation();
-            navigation.buttonOptions = new HIButtonOptions();
-            navigation.buttonOptions.symbolStroke = HIColor.initWithRGBA(255, 255, 255, 0.4);
+            navigation.setButtonOptions(new HIButtonOptions());
+            navigation.getButtonOptions().setSymbolStroke(HIColor.initWithRGBA(255, 255, 255, 0.4));
             HITheme theme = new HITheme();
-            theme.fill = "rgba(0,0,0,0.0)";
-            navigation.buttonOptions.theme = theme;
-            hioptions.navigation = navigation;
+            theme.setFill("rgba(0,0,0,0.0)");
+            navigation.getButtonOptions().setTheme(theme);
+            hiOptions.setNavigation(navigation);
 
             HIPlotOptions plotOptions = new HIPlotOptions();
-            plotOptions.column = new HIColumn();
-            plotOptions.column.color = HIColor.initWithRGBA(255, 255, 255, 0.6);
-            plotOptions.column.borderRadius = 2;
-            plotOptions.column.borderWidth = 0;
-            hioptions.plotOptions = plotOptions;
+            plotOptions.setColumn(new HIColumn());
+            plotOptions.getColumn().setColor(HIColor.initWithRGBA(255, 255, 255, 0.6));
+            plotOptions.getColumn().setBorderRadius(2);
+            plotOptions.getColumn().setBorderWidth(0);
+            hiOptions.setPlotOptions(plotOptions);
 
             HICredits credits = new HICredits();
-            credits.text = "www.highcharts.com";
+            credits.setEnabled(true);
+            credits.setText("www.highcharts.com");
             HIStyle creditsStyle = new HIStyle();
-            creditsStyle.color = "rgba(255, 255, 255, 0.6)";
-            credits.style = creditsStyle;
-            credits.enabled = true;
-            hioptions.credits = credits;
+            creditsStyle.setColor("rgba(255, 255, 255, 0.6)");
+            credits.setStyle(creditsStyle);
+            hiOptions.setCredits(credits);
 
             HITitle title = new HITitle();
-            title.text = options.get("title");
-            title.align = "left";
+            title.setText(options.get("title"));
+            title.setAlign("left");
             HIStyle titleStyle = new HIStyle();
-            titleStyle.fontFamily = "Arial";
-            titleStyle.fontSize = "14px";
-            titleStyle.color = "rgba(255, 255, 255, 0.6)";
-            title.style = titleStyle;
-            title.y = 16;
-            hioptions.title = title;
+            titleStyle.setFontFamily("Arial");
+            titleStyle.setFontSize("14px");
+            titleStyle.setColor("rgba(255, 255, 255, 0.6)");
+            title.setStyle(titleStyle);
+            title.setY(16);
+            hiOptions.setTitle(title);
 
             HISubtitle subtitle = new HISubtitle();
-            subtitle.text = options.get("subtitle");
-            if (subtitle.text.length() > 0) {
-                subtitle.text = subtitle.text + " total";
+            subtitle.setText(options.get("subtitle"));
+            if (subtitle.getText().length() > 0) {
+                subtitle.setText(subtitle.getText() + " total");
             }
             HashMap<String, String> subtitleStyle = new HashMap<>();
             subtitleStyle.put("fontFamily", "Arial");
             subtitleStyle.put("fontSize", "9px");
             subtitleStyle.put("color", "rgba(255, 255, 255, 0.6)");
-            subtitle.style = subtitleStyle;
-            subtitle.align = "left";
-            subtitle.y = 28;
-            hioptions.subtitle = subtitle;
+            subtitle.setStyle(subtitleStyle);
+            subtitle.setAlign("left");
+            subtitle.setY(28);
+            hiOptions.setSubtitle(subtitle);
 
             HITooltip tooltip = new HITooltip();
-            tooltip.headerFormat = "";
-            hioptions.tooltip = tooltip;
+            tooltip.setHeaderFormat("");
+            hiOptions.setTooltip(tooltip);
 
             final HIXAxis xaxis = new HIXAxis();
-            xaxis.tickColor = HIColor.initWithRGBA(255, 255, 255, 0.0);
-            xaxis.lineColor = HIColor.initWithRGBA(255, 255, 255, 0.3);
-            xaxis.labels = new HILabels();
+            xaxis.setTickColor(HIColor.initWithRGBA(255, 255, 255, 0.0));
+            xaxis.setLineColor(HIColor.initWithRGBA(255, 255, 255, 0.3));
+            xaxis.setLabels(new HILabels());
             HIStyle xLabelsStyle = new HIStyle();
-            xLabelsStyle.color = "rgb(255, 255, 255)";
-            xLabelsStyle.fontSize = "10px";
-            xLabelsStyle.fontFamily = "Arial";
-            xaxis.labels.style = xLabelsStyle;
-            xaxis.labels.step = step;
-            xaxis.categories = new ArrayList<>(Arrays.asList(categories));
-            hioptions.xAxis = new ArrayList<HIXAxis>(){{add(xaxis);}};
+            xLabelsStyle.setColor("rgb(255, 255, 255)");
+            xLabelsStyle.setFontSize("10px");
+            xLabelsStyle.setFontFamily("Arial");
+            xaxis.getLabels().setStyle(xLabelsStyle);
+            xaxis.getLabels().setStep(step);
+            xaxis.setCategories(new ArrayList<>(Arrays.asList(categories)));
+            hiOptions.setXAxis(new ArrayList<HIXAxis>(){{add(xaxis);}});
 
             final HIYAxis yaxis = new HIYAxis();
-            yaxis.lineWidth = 1;
-            yaxis.gridLineWidth = 0;
-            yaxis.lineColor = HIColor.initWithRGBA(255, 255, 255, 0.0);
-            yaxis.labels = new HILabels();
+            yaxis.setLineWidth(1);
+            yaxis.setGridLineWidth(0);
+            yaxis.setLineColor(HIColor.initWithRGBA(255, 255, 255, 0.0));
+            yaxis.setLabels(new HILabels());
             HIStyle yLabelsStyle = new HIStyle();
-            yLabelsStyle.color = "rgb(255, 255, 255)";
-            yLabelsStyle.fontSize = "10px";
-            yLabelsStyle.fontFamily = "Arial";
-            yaxis.labels.style = yLabelsStyle;
-            yaxis.labels.x = -5;
-            yaxis.title = new HITitle();
-            yaxis.title.text = "";
-            hioptions.yAxis = new ArrayList<HIYAxis>(){{add(yaxis);}};
+            yLabelsStyle.setColor("rgb(255, 255, 255)");
+            yLabelsStyle.setFontSize("10px");
+            yLabelsStyle.setFontFamily("Arial");
+            yaxis.getLabels().setStyle(yLabelsStyle);
+            yaxis.getLabels().setX(-5);
+            yaxis.setTitle(new HITitle());
+            yaxis.getTitle().setText("");
+            hiOptions.setYAxis(new ArrayList<HIYAxis>(){{add(yaxis);}});
 
             final HIColumn column = new HIColumn();
-            column.tooltip = new HITooltip();
-            column.tooltip.headerFormat = "";
-            column.tooltip.valueSuffix = " kcal";
-            column.showInLegend = false;
-            column.data = series;
-            column.name = options.get("title");
-            hioptions.series = new ArrayList<HISeries>(){{add(column);}};
+            column.setTooltip(new HITooltip());
+            column.getTooltip().setHeaderFormat("");
+            column.getTooltip().setValueSuffix(" kcal");
+            column.setShowInLegend(false);
+            column.setData(series);
+            column.setName(options.get("title"));
+            hiOptions.setSeries(new ArrayList<HISeries>(){{add(column);}});
 
-            return hioptions;
+            return hiOptions;
         }
 
         if (options.get("chartType").equals("spline")){
 
-            HIOptions hioptions = new HIOptions();
+            HIOptions hiOptions = new HIOptions();
 
             HIChart chart = new HIChart();
 
@@ -260,103 +260,103 @@ public class OptionsProvider {
             LinkedList<HIStop> stops = new LinkedList<>();
             stops.add(new HIStop(0, HIColor.initWithRGB(132, 103, 144)));
             stops.add(new HIStop(1, HIColor.initWithRGB(163, 95, 103)));
-            chart.backgroundColor = HIColor.initWithLinearGradient(gradient, stops);
-            chart.borderRadius = 6;
-            chart.type = options.get("chartType");
-            hioptions.chart = chart;
+            chart.setBackgroundColor(HIColor.initWithLinearGradient(gradient, stops));
+            chart.setBorderRadius(6);
+            chart.setType(options.get("chartType"));
+            hiOptions.setChart(chart);
 
             HIExporting exporting = new HIExporting();
-            exporting.enabled = Boolean.valueOf(options.get("export"));
-            hioptions.exporting = exporting;
+            exporting.setEnabled(Boolean.valueOf(options.get("export")));
+            hiOptions.setExporting(exporting);
 
             HINavigation navigation = new HINavigation();
-            navigation.buttonOptions = new HIButtonOptions();
-            navigation.buttonOptions.symbolStroke = HIColor.initWithRGBA(255, 255, 255, 0.4);
+            navigation.setButtonOptions(new HIButtonOptions());
+            navigation.getButtonOptions().setSymbolStroke(HIColor.initWithRGBA(255, 255, 255, 0.4));
             HITheme theme = new HITheme();
-            theme.fill = "rgba(0,0,0,0.0)";
-            navigation.buttonOptions.theme = theme;
-            hioptions.navigation = navigation;
+            theme.setFill("rgba(0,0,0,0.0)");
+            navigation.getButtonOptions().setTheme(theme);
+            hiOptions.setNavigation(navigation);
 
             HIPlotOptions plotOptions = new HIPlotOptions();
-            plotOptions.spline = new HISpline();
-            plotOptions.spline.color = HIColor.initWithRGBA(255, 255, 255, 0.6);
-            hioptions.plotOptions = plotOptions;
+            plotOptions.setSpline(new HISpline());
+            plotOptions.getSpline().setColor(HIColor.initWithRGBA(255, 255, 255, 0.6));
+            hiOptions.setPlotOptions(plotOptions);
 
             HICredits credits = new HICredits();
-            credits.text = "www.highcharts.com";
+            credits.setEnabled(true);
+            credits.setText("www.highcharts.com");
             HIStyle creditsStyle = new HIStyle();
-            creditsStyle.color = "rgba(255, 255, 255, 0.6)";
-            credits.style = creditsStyle;
-            credits.enabled = true;
-            hioptions.credits = credits;
+            creditsStyle.setColor("rgba(255, 255, 255, 0.6)");
+            credits.setStyle(creditsStyle);
+            hiOptions.setCredits(credits);
 
             HITitle title = new HITitle();
-            title.text = options.get("title");
-            title.align = "left";
+            title.setText(options.get("title"));
+            title.setAlign("left");
             HIStyle titleStyle = new HIStyle();
-            titleStyle.fontFamily = "Arial";
-            titleStyle.fontSize = "14px";
-            titleStyle.color = "rgba(255, 255, 255, 0.6)";
-            title.style = titleStyle;
-            title.y = 16;
-            hioptions.title = title;
+            titleStyle.setFontFamily("Arial");
+            titleStyle.setFontSize("14px");
+            titleStyle.setColor("rgba(255, 255, 255, 0.6)");
+            title.setStyle(titleStyle);
+            title.setY(16);
+            hiOptions.setTitle(title);
 
             HISubtitle subtitle = new HISubtitle();
-            subtitle.text = options.get("subtitle");
-            if (subtitle.text.length() > 0) {
-                subtitle.text = subtitle.text + " total";
+            subtitle.setText(options.get("subtitle"));
+            if (subtitle.getText().length() > 0) {
+                subtitle.setText(subtitle.getText() + " total");
             }
-            subtitle.align = "left";
+            subtitle.setAlign("left");
             HashMap<String, String> subtitleStyle = new HashMap<>();
             subtitleStyle.put("fontFamily", "Arial");
             subtitleStyle.put("fontSize", "10px");
             subtitleStyle.put("color", "rgba(255, 255, 255, 0.6)");
-            subtitle.style = subtitleStyle;
-            subtitle.y = 28;
-            hioptions.subtitle = subtitle;
+            subtitle.setStyle(subtitleStyle);
+            subtitle.setY(28);
+            hiOptions.setSubtitle(subtitle);
 
             HITooltip tooltip = new HITooltip();
-            tooltip.headerFormat = "";
-            hioptions.tooltip = tooltip;
+            tooltip.setHeaderFormat("");
+            hiOptions.setTooltip(tooltip);
 
             final HIXAxis xaxis = new HIXAxis();
-            xaxis.tickColor = HIColor.initWithRGBA(255, 255, 255, 0.0);
-            xaxis.lineColor = HIColor.initWithRGBA(255, 255, 255, 0.3);
-            xaxis.labels = new HILabels();
+            xaxis.setTickColor(HIColor.initWithRGBA(255, 255, 255, 0.0));
+            xaxis.setLineColor(HIColor.initWithRGBA(255, 255, 255, 0.3));
+            xaxis.setLabels(new HILabels());
             HIStyle xLabelsStyle = new HIStyle();
-            xLabelsStyle.color = "rgb(255, 255, 255)";
-            xLabelsStyle.fontFamily = "Arial";
-            xLabelsStyle.fontSize = "10px";
-            xaxis.labels.style = xLabelsStyle;
-            xaxis.labels.step = step;
-            xaxis.categories = new ArrayList<>(Arrays.asList(categories));
-            hioptions.xAxis = new ArrayList<HIXAxis>(){{add(xaxis);}};
+            xLabelsStyle.setColor("rgb(255, 255, 255)");
+            xLabelsStyle.setFontFamily("Arial");
+            xLabelsStyle.setFontSize("10px");
+            xaxis.getLabels().setStyle(xLabelsStyle);
+            xaxis.getLabels().setStep(step);
+            xaxis.setCategories(new ArrayList<>(Arrays.asList(categories)));
+            hiOptions.setXAxis(new ArrayList<HIXAxis>(){{add(xaxis);}});
 
             final HIYAxis yaxis = new HIYAxis();
-            yaxis.lineWidth = 1;
-            yaxis.gridLineWidth = 0;
-            yaxis.lineColor = HIColor.initWithRGBA(255, 255, 255, 0.3);
-            yaxis.labels = new HILabels();
+            yaxis.setLineWidth(1);
+            yaxis.setGridLineWidth(0);
+            yaxis.setLineColor(HIColor.initWithRGBA(255, 255, 255, 0.3));
+            yaxis.setLabels(new HILabels());
             HIStyle yLabelsStyle = new HIStyle();
-            yLabelsStyle.color = "rgb(255, 255, 255)";
-            yLabelsStyle.fontFamily = "Arial";
-            yLabelsStyle.fontSize = "10px";
-            yaxis.labels.style = yLabelsStyle;
-            yaxis.labels.x = -5;
-            yaxis.title = new HITitle();
-            yaxis.title.text = "";
-            hioptions.yAxis = new ArrayList<HIYAxis>(){{add(yaxis);}};
+            yLabelsStyle.setColor("rgb(255, 255, 255)");
+            yLabelsStyle.setFontFamily("Arial");
+            yLabelsStyle.setFontSize("10px");
+            yaxis.getLabels().setStyle(yLabelsStyle);
+            yaxis.getLabels().setX(-5);
+            yaxis.setTitle(new HITitle());
+            yaxis.getTitle().setText("");
+            hiOptions.setYAxis(new ArrayList<HIYAxis>(){{add(yaxis);}});
 
             final HISpline spline = new HISpline();
-            spline.tooltip = new HITooltip();
-            spline.tooltip.headerFormat = "";
-            spline.tooltip.valueSuffix = " kcal";
-            spline.showInLegend = false;
-            spline.data = series;
-            spline.name = options.get("title");
-            hioptions.series = new ArrayList<HISeries>(){{add(spline);}};
+            spline.setTooltip(new HITooltip());
+            spline.getTooltip().setHeaderFormat("");
+            spline.getTooltip().setValueSuffix(" kcal");
+            spline.setShowInLegend(false);
+            spline.setData(series);
+            spline.setName(options.get("title"));
+            hiOptions.setSeries(new ArrayList<HISeries>(){{add(spline);}});
 
-            return hioptions;
+            return hiOptions;
         }
 
         return null;

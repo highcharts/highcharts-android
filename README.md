@@ -114,18 +114,18 @@ HIOptions options = new HIOptions();
 Now we need to add the options that our chart requires to be presented. Let's start with **chart type**. To do so, create HIChart class object and set its type to "column"
 ```java
 HIChart chart = new HIChart();
-chart.type = "column";
+chart.setType("column");
 ```
 Add this object to your **options**
 ```java
-options.chart = chart;
+options.setChart(chart);
 ```
 Then let's give our chart a name (title) and also add it to **options**
 ```java
 HITitle title = new HITitle();
-title.text = "Demo chart";
+title.setText("Demo chart");
 
-options.title = title;
+options.setTitle(title);
 ```
 Now we need to add some data (in this tutorial it will be some random set of numbers). Since we are creating a **column** chart, we need to use **HIColumn** data series
 ```java
@@ -133,15 +133,15 @@ HIColumn series = new HIColumn();
 ```
 To add data, just create an ArrayList with our data objects
 ```java
-series.data = new ArrayList<>(Arrays.asList(49.9, 71.5, 106.4, 129.2, 144, 176, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4));
+series.setData(new ArrayList<>(Arrays.asList(49.9, 71.5, 106.4, 129.2, 144, 176, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4)));
 ```
 Since options can store multiple series, we need to add our series as one-element ArrayList
 ```java
-options.series = new ArrayList<HISeries>(Collections.singletonList(series));
+options.setSeries(new ArrayList<HISeries>(Collections.singletonList(series)));
 ```
 And at last add our **options** to the chartView
 ```java
-chartView.options = options;
+chartView.setOptions(options);
 ```
 
 That's it! We are now set to run our application!
@@ -172,19 +172,19 @@ public class MainActivity extends AppCompatActivity {
         HIOptions options = new HIOptions();
 
         HIChart chart = new HIChart();
-        chart.type = "column";
-        options.chart = chart;
+        chart.setType("column");
+        options.setChart(chart);
 
         HITitle title = new HITitle();
-        title.text = "Demo chart";
+        title.setText("Demo chart");
 
-        options.title = title;
+        options.setTitle(title);
 
         HIColumn series = new HIColumn();
-        series.data = new ArrayList<>(Arrays.asList(49.9, 71.5, 106.4, 129.2, 144, 176, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4));
-        options.series = new ArrayList<HISeries>(Collections.singletonList(series));
+        series.setData(new ArrayList<>(Arrays.asList(49.9, 71.5, 106.4, 129.2, 144, 176, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4)));
+        options.setSeries(new ArrayList<HISeries>(Collections.singletonList(series)));
 
-        chartView.options = options;
+        chartView.setOptions(options);
     }
 }
 ```
@@ -231,7 +231,7 @@ stops.add(new HIStop(1, HIColor.initWithRGB(60, 60, 60)));
 Now you can instantiate a color thanks to those objects for, let's say, chart background:
 ```java
 HIChart chart = new HIChart();
-chart.backgroundColor = HIColor.initWithLinearGradient(gradient, stops);
+chart.setBackgroundColor(HIColor.initWithLinearGradient(gradient, stops));
 ```
 #### HIFunction example
 Thanks to Highcharts Android wrapper you can now assign native Android callbacks to on click events for specific chart elements. We will show you a small taste of such usage. For these purpose we will let appear a simple Toast with point coordinates when it's clicked but keep in mind that you can achieve much more with `HIFunction` mechanism! 
@@ -239,13 +239,13 @@ Thanks to Highcharts Android wrapper you can now assign native Android callbacks
 First of all, you need to create a series:
 ```java
 HISpline spline = new HISpline();
-spline.data = new ArrayList<>(Arrays.asList(0.3,5.3,8.0,9.1,3.2,5.4,4.0,4.2,2.1,10.0));
+spline.setData(new ArrayList<>(Arrays.asList(0.3,5.3,8.0,9.1,3.2,5.4,4.0,4.2,2.1,10.0)));
 ```
 Now, you can refer to the point event and add on click callback like this:
 ```java
-spline.point = new HIPoint();
-spline.point.events = new HIEvents();
-spline.point.events.click = new HIFunction(
+spline.setPoint(new HIPoint());
+spline.getPoint().setEvents(new HIEvents());
+spline.getPoint().getEvents().setClick(new HIFunction(
         f -> {
             Toast t = Toast.makeText(
                 this,
@@ -254,7 +254,7 @@ spline.point.events.click = new HIFunction(
                 t.show();
             },
             new String[] {"x", "y"}
-);
+));
 ```
 As you can see in the above code snippet first argument of the `HIFunction` is the actual callback defined in the lambda expression. Second argument is simple array of chart elements. We need to put them here to let wrapper pull them for us during `HIFunction` instantiation. Thanks to this, we can refer to these elements corresponding values by `getProperty()` method. You can pull any data from chart like this. Depending on the current needs you can just run some code, withdraw data from chart, return a String to the chart (e.g. in HITooltip formatter) and even put pure Javascript function in the constructor in the String format. For more information feel free to check the [API documentation](https://api.highcharts.com/android/highcharts/).
 

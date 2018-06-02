@@ -53,7 +53,7 @@ public class ChartsManager {
         if(enableExport) options.put("export", "true");
         else options.put("export", "false");
 
-        chartView.options = OptionsProvider.provideOptionsForChartType(options, (ArrayList) daySeries, "day");
+        chartView.setOptions(OptionsProvider.provideOptionsForChartType(options, (ArrayList) daySeries, "day"));
 
         return chartView;
     }
@@ -91,7 +91,7 @@ public class ChartsManager {
         options.put("subtitle", subtitle);
         options.put("export", "true");
 
-        chartView.options = OptionsProvider.provideOptionsForChartType(options, (ArrayList) scaleSeries, scale);
+        chartView.setOptions(OptionsProvider.provideOptionsForChartType(options, (ArrayList) scaleSeries, scale));
     }
 
     private static String loadJSONFromAsset(String file, Context c) {

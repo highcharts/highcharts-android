@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-import com.highsoft.highcharts.Core.HIChartView;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -21,6 +20,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.HashMap;
 import java.util.Map;
+
+import com.highsoft.highcharts.Core.HIChartView;
 
 
 /**
@@ -38,6 +39,7 @@ public class DashboardFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_charts_dashboard, container, false);
+
 
         HIChartView areaView = (HIChartView) view.findViewById(R.id.area);
         HIChartView splineView = (HIChartView) view.findViewById(R.id.spline);
