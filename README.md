@@ -42,7 +42,7 @@ repositories {
 and following to the dependencies in your app **build.gradle** file:
 ```gradle
 dependencies {
-    compile 'com.highsoft.highcharts:highcharts:6.1.3'
+    compile 'com.highsoft.highcharts:highcharts:6.1.4'
 }
 ```
 **B)** You can download the _aar_ from [here](https://github.com/highcharts/highcharts-android/releases) and add it manually if you want. Put the _aar_ in the _libs_ folder in your project structure:
