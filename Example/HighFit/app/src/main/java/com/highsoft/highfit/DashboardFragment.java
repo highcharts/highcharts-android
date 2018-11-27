@@ -21,7 +21,7 @@ import java.io.ObjectOutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.highsoft.highcharts.Core.HIChartView;
+import com.highsoft.highcharts.core.HIChartView;
 
 
 /**

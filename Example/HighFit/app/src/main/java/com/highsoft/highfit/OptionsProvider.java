@@ -1,7 +1,7 @@
 package com.highsoft.highfit;
 
-import com.highsoft.highcharts.Common.*;
-import com.highsoft.highcharts.Common.HIChartsClasses.*;
+import com.highsoft.highcharts.common.*;
+import com.highsoft.highcharts.common.hichartsclasses.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -70,7 +70,7 @@ public class OptionsProvider {
             HICredits credits = new HICredits();
             credits.setEnabled(true);
             credits.setText("www.highcharts.com");
-            HIStyle creditsStyle = new HIStyle();
+            HICSSObject creditsStyle = new HICSSObject();
             creditsStyle.setColor("rgba(255, 255, 255, 0.6)");
             credits.setStyle(creditsStyle);
             hiOptions.setCredits(credits);
@@ -78,7 +78,7 @@ public class OptionsProvider {
             HITitle title = new HITitle();
             title.setText(options.get("title"));
             title.setAlign("left");
-            HIStyle titleStyle = new HIStyle();
+            HICSSObject titleStyle = new HICSSObject();
             titleStyle.setFontFamily("Arial");
             titleStyle.setFontSize("14px");
             titleStyle.setColor("rgba(255, 255, 255, 0.6)");
@@ -90,10 +90,10 @@ public class OptionsProvider {
             subtitle.setText(options.get("subtitle"));
             if(subtitle.getText().length() > 0) subtitle.setText(subtitle.getText() + " total");
             subtitle.setAlign( "left");
-            HashMap<String, String> subtitleStyle = new HashMap<>();
-            subtitleStyle.put("fontFamily", "Arial");
-            subtitleStyle.put("fontSize", "9px");
-            subtitleStyle.put("color", "rgba(255, 255, 255, 0.6)");
+            HICSSObject subtitleStyle = new HICSSObject();
+            subtitleStyle.setFontFamily("Arial");
+            subtitleStyle.setFontSize("9px");
+            subtitleStyle.setColor("rgba(255, 255, 255, 0.6)");
             subtitle.setStyle(subtitleStyle);
             subtitle.setY(28);
             hiOptions.setSubtitle(subtitle);
@@ -102,7 +102,7 @@ public class OptionsProvider {
             xaxis.setTickColor(HIColor.initWithRGBA(255, 255, 255, 0.0));
             xaxis.setLineColor(HIColor.initWithRGBA(255, 255, 255, 0.3));
             xaxis.setLabels(new HILabels());
-            HIStyle xaxisStyle = new HIStyle();
+            HICSSObject xaxisStyle = new HICSSObject();
             xaxisStyle.setColor("rgb(255, 255, 255)");
             xaxisStyle.setFontSize("10px");
             xaxisStyle.setFontFamily("Arial");
@@ -116,7 +116,7 @@ public class OptionsProvider {
             yaxis.setLineWidth(1);
             yaxis.setGridLineWidth(0);
             yaxis.setLabels(new HILabels());
-            HIStyle yaxisStyle = new HIStyle();
+            HICSSObject yaxisStyle = new HICSSObject();
             yaxisStyle.setColor("rgb(255, 255, 255)");
             yaxisStyle.setFontFamily("Arial");
             yaxisStyle.setFontSize("10px");
@@ -176,7 +176,7 @@ public class OptionsProvider {
             HICredits credits = new HICredits();
             credits.setEnabled(true);
             credits.setText("www.highcharts.com");
-            HIStyle creditsStyle = new HIStyle();
+            HICSSObject creditsStyle = new HICSSObject();
             creditsStyle.setColor("rgba(255, 255, 255, 0.6)");
             credits.setStyle(creditsStyle);
             hiOptions.setCredits(credits);
@@ -184,7 +184,7 @@ public class OptionsProvider {
             HITitle title = new HITitle();
             title.setText(options.get("title"));
             title.setAlign("left");
-            HIStyle titleStyle = new HIStyle();
+            HICSSObject titleStyle = new HICSSObject();
             titleStyle.setFontFamily("Arial");
             titleStyle.setFontSize("14px");
             titleStyle.setColor("rgba(255, 255, 255, 0.6)");
@@ -197,10 +197,10 @@ public class OptionsProvider {
             if (subtitle.getText().length() > 0) {
                 subtitle.setText(subtitle.getText() + " total");
             }
-            HashMap<String, String> subtitleStyle = new HashMap<>();
-            subtitleStyle.put("fontFamily", "Arial");
-            subtitleStyle.put("fontSize", "9px");
-            subtitleStyle.put("color", "rgba(255, 255, 255, 0.6)");
+            HICSSObject subtitleStyle = new HICSSObject();
+            subtitleStyle.setFontFamily("Arial");
+            subtitleStyle.setFontSize("9px");
+            subtitleStyle.setColor("rgba(255, 255, 255, 0.6)");
             subtitle.setStyle(subtitleStyle);
             subtitle.setAlign("left");
             subtitle.setY(28);
@@ -214,7 +214,7 @@ public class OptionsProvider {
             xaxis.setTickColor(HIColor.initWithRGBA(255, 255, 255, 0.0));
             xaxis.setLineColor(HIColor.initWithRGBA(255, 255, 255, 0.3));
             xaxis.setLabels(new HILabels());
-            HIStyle xLabelsStyle = new HIStyle();
+            HICSSObject xLabelsStyle = new HICSSObject();
             xLabelsStyle.setColor("rgb(255, 255, 255)");
             xLabelsStyle.setFontSize("10px");
             xLabelsStyle.setFontFamily("Arial");
@@ -228,7 +228,7 @@ public class OptionsProvider {
             yaxis.setGridLineWidth(0);
             yaxis.setLineColor(HIColor.initWithRGBA(255, 255, 255, 0.0));
             yaxis.setLabels(new HILabels());
-            HIStyle yLabelsStyle = new HIStyle();
+            HICSSObject yLabelsStyle = new HICSSObject();
             yLabelsStyle.setColor("rgb(255, 255, 255)");
             yLabelsStyle.setFontSize("10px");
             yLabelsStyle.setFontFamily("Arial");
@@ -285,7 +285,7 @@ public class OptionsProvider {
             HICredits credits = new HICredits();
             credits.setEnabled(true);
             credits.setText("www.highcharts.com");
-            HIStyle creditsStyle = new HIStyle();
+            HICSSObject creditsStyle = new HICSSObject();
             creditsStyle.setColor("rgba(255, 255, 255, 0.6)");
             credits.setStyle(creditsStyle);
             hiOptions.setCredits(credits);
@@ -293,7 +293,7 @@ public class OptionsProvider {
             HITitle title = new HITitle();
             title.setText(options.get("title"));
             title.setAlign("left");
-            HIStyle titleStyle = new HIStyle();
+            HICSSObject titleStyle = new HICSSObject();
             titleStyle.setFontFamily("Arial");
             titleStyle.setFontSize("14px");
             titleStyle.setColor("rgba(255, 255, 255, 0.6)");
@@ -307,10 +307,10 @@ public class OptionsProvider {
                 subtitle.setText(subtitle.getText() + " total");
             }
             subtitle.setAlign("left");
-            HashMap<String, String> subtitleStyle = new HashMap<>();
-            subtitleStyle.put("fontFamily", "Arial");
-            subtitleStyle.put("fontSize", "10px");
-            subtitleStyle.put("color", "rgba(255, 255, 255, 0.6)");
+            HICSSObject subtitleStyle = new HICSSObject();
+            subtitleStyle.setFontFamily("Arial");
+            subtitleStyle.setFontSize("10px");
+            subtitleStyle.setColor("rgba(255, 255, 255, 0.6)");
             subtitle.setStyle(subtitleStyle);
             subtitle.setY(28);
             hiOptions.setSubtitle(subtitle);
@@ -323,7 +323,7 @@ public class OptionsProvider {
             xaxis.setTickColor(HIColor.initWithRGBA(255, 255, 255, 0.0));
             xaxis.setLineColor(HIColor.initWithRGBA(255, 255, 255, 0.3));
             xaxis.setLabels(new HILabels());
-            HIStyle xLabelsStyle = new HIStyle();
+            HICSSObject xLabelsStyle = new HICSSObject();
             xLabelsStyle.setColor("rgb(255, 255, 255)");
             xLabelsStyle.setFontFamily("Arial");
             xLabelsStyle.setFontSize("10px");
@@ -337,7 +337,7 @@ public class OptionsProvider {
             yaxis.setGridLineWidth(0);
             yaxis.setLineColor(HIColor.initWithRGBA(255, 255, 255, 0.3));
             yaxis.setLabels(new HILabels());
-            HIStyle yLabelsStyle = new HIStyle();
+            HICSSObject yLabelsStyle = new HICSSObject();
             yLabelsStyle.setColor("rgb(255, 255, 255)");
             yLabelsStyle.setFontFamily("Arial");
             yLabelsStyle.setFontSize("10px");

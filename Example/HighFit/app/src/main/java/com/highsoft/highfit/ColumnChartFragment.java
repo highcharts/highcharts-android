@@ -10,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
-import com.highsoft.highcharts.Core.HIChartView;
+import com.highsoft.highcharts.core.HIChartView;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
