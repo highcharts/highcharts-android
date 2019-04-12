@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.highsoft.highfit">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.highsoft.highfit">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
@@ -12,8 +13,9 @@
             android:icon="@mipmap/ic_highfit_icon"
             android:label="@string/app_name"
             android:supportsRtl="true"
-            android:theme="@style/AppTheme">
-        <provider
+            android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+<!--        <provider
                 android:name="android.support.v4.content.FileProvider"
                 android:authorities="com.highsoft.highfit.FileProvider"
                 android:exported="false"
@@ -21,7 +23,7 @@
             <meta-data
                     android:name="android.support.FILE_PROVIDER_PATHS"
                     android:resource="@xml/provider_paths"/>
-        </provider>
+        </provider>-->
 
         <activity
                 android:name="com.highsoft.highfit.MainActivity"

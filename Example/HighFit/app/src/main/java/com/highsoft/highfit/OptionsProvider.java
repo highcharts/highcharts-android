@@ -54,7 +54,7 @@ public class OptionsProvider {
             navigation.setButtonOptions(new HIButtonOptions());
             navigation.getButtonOptions().setSymbolStroke(HIColor.initWithRGBA(255,255,255,0.4));
             HITheme theme = new HITheme();
-            theme.setFill("rgba(0,0,0,0.0)");
+            theme.setFill(HIColor.initWithRGBA(0,0,0,0));
             navigation.getButtonOptions().setTheme(theme);
             hiOptions.setNavigation(navigation);
 
@@ -162,7 +162,7 @@ public class OptionsProvider {
             navigation.setButtonOptions(new HIButtonOptions());
             navigation.getButtonOptions().setSymbolStroke(HIColor.initWithRGBA(255, 255, 255, 0.4));
             HITheme theme = new HITheme();
-            theme.setFill("rgba(0,0,0,0.0)");
+            theme.setFill(HIColor.initWithRGBA(0,0,0,0));
             navigation.getButtonOptions().setTheme(theme);
             hiOptions.setNavigation(navigation);
 
@@ -273,7 +273,7 @@ public class OptionsProvider {
             navigation.setButtonOptions(new HIButtonOptions());
             navigation.getButtonOptions().setSymbolStroke(HIColor.initWithRGBA(255, 255, 255, 0.4));
             HITheme theme = new HITheme();
-            theme.setFill("rgba(0,0,0,0.0)");
+            theme.setFill(HIColor.initWithRGBA(0,0,0,0));
             navigation.getButtonOptions().setTheme(theme);
             hiOptions.setNavigation(navigation);
 
