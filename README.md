@@ -27,27 +27,27 @@ Here we present how to create basic chart and place it in your project.
 
 ## Preparing your project
 
-- First of all download the Highcharts framework. 
+- First of all download the Highcharts framework.
 
 **A)** You can add the library to the gradle dependecies from Bintray:
 
 Add the Highcharts repository to your **build.gradle** file:
 ```gradle
-repositories { 
-    maven { 
-        url "https://highsoft.bintray.com/Highcharts" 
+repositories {
+    maven {
+        url "https://highsoft.bintray.com/Highcharts"
     }
 }
 ```
 and following to the dependencies in your app **build.gradle** file:
 ```gradle
 dependencies {
-    compile 'com.highsoft.highcharts:highcharts:7.1.1'
+    compile 'com.highsoft.highcharts:highcharts:7.0.3'
 }
 ```
 **B)** You can download the _aar_ from [here](https://github.com/highcharts/highcharts-android/releases) and add it manually if you want. Put the _aar_ in the _libs_ folder in your project structure:
 
-![Project structure screenshot](https://github.com/highcharts/highcharts-android/blob/master/Images/1.png "Files1")
+![Project structure screenshot](https://github.com/highcharts/highcharts-android/blob/master/Images/1.png "Project structure")
 
 Then, add the following lines to your **build.gradle** file in `repositories`:
 ```gradle
@@ -74,7 +74,7 @@ You are now set to use Highcharts!
 
 At first, you need to create a **view** for your chart. Go to your `activity_main.xml` and add this to your layout:
 ```xml
-<com.highsoft.highcharts.core.HIChartView
+<com.highsoft.highcharts.Core.HIChartView
    android:id="@+id/hc"
    android:layout_width="match_parent"
    android:layout_height="match_parent" />
@@ -86,8 +86,8 @@ At first, you need to create a **view** for your chart. Go to your `activity_mai
 In your **MainActivity.java** import Highcharts at the top
 
 ```java
-import com.highsoft.highcharts.core.*;
-import com.highsoft.highcharts.common.hichartsclasses.*;
+import com.highsoft.highcharts.Core.*;
+import com.highsoft.highcharts.Common.HIChartsClasses.*;
 ```
 
 Next, in **onCreate** add the **HIChartView** following line:
@@ -105,7 +105,7 @@ Let's start with creating simple chart!
 
 For the purpose of this tutorial, we will create a simple column chart using random data.
 
-The heart of a chart is **HIOptions** class which contains all the information needed to present it. Some of the options there are optional, some are not (see demo app [HighFit](https://github.com/highcharts/highcharts-android/tree/master/Example/HighFit) provided by Highcharts). 
+The heart of a chart is **HIOptions** class which contains all the information needed to present it. Some of the options there are optional, some are not (see demo app [HighFit](https://github.com/highcharts/highcharts-android/tree/master/Example/HighFit) provided by Highcharts).
 
 Create instance of **HIOptions** class
 ```java
@@ -152,8 +152,8 @@ package com.highsoft.highchartsdemo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.highsoft.highcharts.core.*;
-import com.highsoft.highcharts.common.hichartsclasses.*;
+import com.highsoft.highcharts.Core.*;
+import com.highsoft.highcharts.Common.HIChartsClasses.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -213,7 +213,7 @@ and the needed _provider_paths_ file
 ```
 into _xml_ folder here:
 
-![xml folder location screenshot](https://github.com/highcharts/highcharts-android/blob/master/Images/2.png "Files2")
+![XML folder location](https://github.com/highcharts/highcharts-android/blob/master/Images/2.png "XML folder location")
 
 
 #### HIColor example
@@ -234,7 +234,7 @@ HIChart chart = new HIChart();
 chart.setBackgroundColor(HIColor.initWithLinearGradient(gradient, stops));
 ```
 #### HIFunction example
-Thanks to Highcharts Android wrapper you can now assign native Android callbacks to on click events for specific chart elements. We will show you a small taste of such usage. For these purpose we will let appear a simple Toast with point coordinates when it's clicked but keep in mind that you can achieve much more with `HIFunction` mechanism! 
+Thanks to Highcharts Android wrapper you can now assign native Android callbacks to on click events for specific chart elements. We will show you a small taste of such usage. For these purpose we will let appear a simple Toast with point coordinates when it's clicked but keep in mind that you can achieve much more with `HIFunction` mechanism!
 
 First of all, you need to create a series:
 ```java
@@ -257,6 +257,22 @@ spline.getPoint().getEvents().setClick(new HIFunction(
 ));
 ```
 As you can see in the above code snippet first argument of the `HIFunction` is the actual callback defined in the lambda expression. Second argument is simple array of chart elements. We need to put them here to let wrapper pull them for us during `HIFunction` instantiation. Thanks to this, we can refer to these elements corresponding values by `getProperty()` method. You can pull any data from chart like this. Depending on the current needs you can just run some code, withdraw data from chart, return a String to the chart (e.g. in HITooltip formatter) and even put pure Javascript function in the constructor in the String format. For more information feel free to check the [API documentation](https://api.highcharts.com/android/highcharts/).
+#### Custom fonts
+Highcharts Android wrapper allows you to add custom fonts. If you have your own font and want to use that in your chart follow next steps:
+Add a font file to your project. Select File -> Add Files to “Your Project Name” from the menu bar or drag and drop the file into your Xcode project, check Copy items if needed option and add the font to your app target.
 
+- Add a font file to your project.
 
-
+![Fonts location](https://github.com/highcharts/highcharts-android/blob/master/Images/3.png "Fonts in project structure")
+- Add your font to `HIChartView`. To do this, pass your font resource to your `HIChartView`:
+```Java
+HIChartView chartView = findViewById(R.id.hc);
+chartView.addFont(R.font.griphite);
+```
+So, now you can use a custom font in your chart. For example, let's change the chart title font. You only need to create a style object for the title and set its font family to the font file name:
+```Java
+HICSSObject style = new HICSSObject();
+style.setFontFamily("griphite");
+HITitle title = new HITitle();
+title.setStyle(style);
+```
