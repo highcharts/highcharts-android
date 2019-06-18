@@ -42,7 +42,7 @@ repositories {
 and following to the dependencies in your app **build.gradle** file:
 ```gradle
 dependencies {
-    compile 'com.highsoft.highcharts:highcharts:7.0.3'
+    compile 'com.highsoft.highcharts:highcharts:7.1.2'
 }
 ```
 **B)** You can download the _aar_ from [here](https://github.com/highcharts/highcharts-android/releases) and add it manually if you want. Put the _aar_ in the _libs_ folder in your project structure:
@@ -74,7 +74,7 @@ You are now set to use Highcharts!
 
 At first, you need to create a **view** for your chart. Go to your `activity_main.xml` and add this to your layout:
 ```xml
-<com.highsoft.highcharts.Core.HIChartView
+<com.highsoft.highcharts.core.HIChartView
    android:id="@+id/hc"
    android:layout_width="match_parent"
    android:layout_height="match_parent" />
@@ -86,8 +86,8 @@ At first, you need to create a **view** for your chart. Go to your `activity_mai
 In your **MainActivity.java** import Highcharts at the top
 
 ```java
-import com.highsoft.highcharts.Core.*;
-import com.highsoft.highcharts.Common.HIChartsClasses.*;
+import com.highsoft.highcharts.core.*;
+import com.highsoft.highcharts.common.HIChartsClasses.*;
 ```
 
 Next, in **onCreate** add the **HIChartView** following line:
@@ -152,8 +152,8 @@ package com.highsoft.highchartsdemo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.highsoft.highcharts.Core.*;
-import com.highsoft.highcharts.Common.HIChartsClasses.*;
+import com.highsoft.highcharts.core.*;
+import com.highsoft.highcharts.common.HIChartsClasses.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
