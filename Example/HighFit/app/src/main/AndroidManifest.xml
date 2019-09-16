@@ -15,7 +15,7 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-<!--        <provider
+        <provider
                 android:name="android.support.v4.content.FileProvider"
                 android:authorities="com.highsoft.highfit.FileProvider"
                 android:exported="false"
@@ -23,7 +23,7 @@
             <meta-data
                     android:name="android.support.FILE_PROVIDER_PATHS"
                     android:resource="@xml/provider_paths"/>
-        </provider>-->
+        </provider>
 
         <activity
                 android:name="com.highsoft.highfit.MainActivity"
