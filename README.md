@@ -42,7 +42,7 @@ repositories {
 and following to the dependencies in your app **build.gradle** file:
 ```gradle
 dependencies {
-    compile 'com.highsoft.highcharts:highcharts:7.2.1'
+    compile 'com.highsoft.highcharts:highcharts:8.0'
 }
 ```
 **B)** You can download the _aar_ from [here](https://github.com/highcharts/highcharts-android/releases) and add it manually if you want. Put the _aar_ in the _libs_ folder in your project structure:
@@ -256,10 +256,10 @@ spline.getPoint().getEvents().setClick(new HIFunction(
             new String[] {"x", "y"}
 ));
 ```
-As you can see in the above code snippet first argument of the `HIFunction` is the actual callback defined in the lambda expression. Second argument is simple array of chart elements. We need to put them here to let wrapper pull them for us during `HIFunction` instantiation. Thanks to this, we can refer to these elements corresponding values by `getProperty()` method. You can pull any data from chart like this. Depending on the current needs you can just run some code, withdraw data from chart, return a String to the chart (e.g. in HITooltip formatter) and even put pure Javascript function in the constructor in the String format. For more information feel free to check the [API documentation](https://api.highcharts.com/android/highcharts/).
+As you can see in the above code snippet first argument of the `HIFunction` is the actual callback defined in the lambda expression. Second argument is simple array of chart elements. We need to put them here to let wrapper pull them for us during `HIFunction` instantiation. Thanks to this, we can refer to these elements corresponding values by `getProperty()` method. You can pull any data from chart like this. Depending on the current needs you can just run some code, withdraw data from chart, return a String to the chart (e.g. in HITooltip formatter) and even put pure Javascript function in the constructor in the String format. To get more complex structures from HIFuncion refer to nested elements using dot e.g. `yAxis.0.min`. For more information feel free to check the [API documentation](https://api.highcharts.com/android/highcharts/).
 #### Custom fonts
 Highcharts Android wrapper allows you to add custom fonts. If you have your own font and want to use that in your chart follow next steps:
-Add a font file to your project. Select File -> Add Files to “Your Project Name” from the menu bar or drag and drop the file into your Xcode project, check Copy items if needed option and add the font to your app target.
+Add a font file to your project. Select File -> Add Files to “Your Project Name” from the menu bar or drag and drop the file into your project.
 
 - Add a font file to your project.
 
