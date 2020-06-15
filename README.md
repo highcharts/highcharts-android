@@ -4,7 +4,7 @@
 
 [ ![Download](https://api.bintray.com/packages/highsoft/Highcharts/Highcharts/images/download.svg) ](https://bintray.com/highsoft/Highcharts/Highcharts/_latestVersion)
 
-[Highcharts Android](http://www.highcharts.com/blog/mobile/) is a delightful wrapper of HighchartsJS for Android.
+[Highcharts Android](https://www.highcharts.com/blog/products/android/) is a delightful wrapper of HighchartsJS for Android.
 
 The most popular, robust and battle-tested JavaScript Charting library is now available for Android with our new Java wrapper. Get gorgeous, multi-touch charts with minimal effort.
 
