@@ -2,7 +2,7 @@
 <img src="https://github.com/highcharts/highcharts-android/blob/master/Images/logo.png" alt="Highcharts" title="Highcharts">
 </p>
 
-[ ![Download](https://api.bintray.com/packages/highsoft/Highcharts/Highcharts/images/download.svg) ](https://bintray.com/highsoft/Highcharts/Highcharts/_latestVersion)
+[![](https://jitpack.io/v/highcharts/highcharts-android.svg)](https://jitpack.io/#highcharts/highcharts-android)
 
 [Highcharts Android](https://www.highcharts.com/blog/products/android/) is a delightful wrapper of HighchartsJS for Android.
 
@@ -31,18 +31,16 @@ Here we present how to create basic chart and place it in your project.
 
 **A)** You can add the library to the gradle dependecies from Bintray:
 
-Add the Highcharts repository to your **build.gradle** file:
+Add the JitPack repository to your root **build.gradle** file:
 ```gradle
 repositories {
-    maven {
-        url "https://highsoft.bintray.com/Highcharts"
-    }
+	maven { url 'https://jitpack.io' }
 }
 ```
 and following to the dependencies in your app **build.gradle** file:
 ```gradle
 dependencies {
-    compile 'com.highsoft.highcharts:highcharts:9.0.1'
+    implementation 'com.github.highcharts:highcharts-android:v9.2.2'
 }
 ```
 **B)** You can download the _aar_ from [here](https://github.com/highcharts/highcharts-android/releases) and add it manually if you want. Put the _aar_ in the _libs_ folder in your project structure:
