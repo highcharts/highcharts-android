@@ -4,5 +4,5 @@
     <modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.highcharts</groupId>
 	<artifactId>highcharts-android</artifactId>
-	<version>10.2.0</version>
+	<version>10.3.2</version>
 </project>
