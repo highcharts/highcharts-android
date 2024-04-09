@@ -169,7 +169,9 @@ public class OptionsProvider {
             HIPlotOptions plotOptions = new HIPlotOptions();
             plotOptions.setColumn(new HIColumn());
             plotOptions.getColumn().setColor(HIColor.initWithRGBA(255, 255, 255, 0.6));
-            plotOptions.getColumn().setBorderRadius(2);
+            HIBorderRadiusOptionsObject borderRadiusOptionsObject = new HIBorderRadiusOptionsObject();
+            borderRadiusOptionsObject.setRadius(2);
+            plotOptions.getColumn().setBorderRadius(borderRadiusOptionsObject);
             plotOptions.getColumn().setBorderWidth(0);
             hiOptions.setPlotOptions(plotOptions);
 

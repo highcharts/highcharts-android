@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/HighFit.iml" filepath="$PROJECT_DIR$/.idea/HighFit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HighFit.iml" filepath="$PROJECT_DIR$/.idea/modules/HighFit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/HighFit.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/HighFit.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/HighFit.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/HighFit.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/HighFit.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/HighFit.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/HighFit.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/HighFit.app.unitTest.iml" />
     </modules>
   </component>
 </project>
