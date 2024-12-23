@@ -89,7 +89,6 @@ public class OptionsProvider {
             HISubtitle subtitle = new HISubtitle();
             subtitle.setText(options.get("subtitle"));
             if(subtitle.getText().length() > 0) subtitle.setText(subtitle.getText() + " total");
-            subtitle.setAlign( "left");
             HICSSObject subtitleStyle = new HICSSObject();
             subtitleStyle.setFontFamily("Arial");
             subtitleStyle.setFontSize("9px");
@@ -204,7 +203,6 @@ public class OptionsProvider {
             subtitleStyle.setFontSize("9px");
             subtitleStyle.setColor("rgba(255, 255, 255, 0.6)");
             subtitle.setStyle(subtitleStyle);
-            subtitle.setAlign("left");
             subtitle.setY(28);
             hiOptions.setSubtitle(subtitle);
 
@@ -308,7 +306,6 @@ public class OptionsProvider {
             if (subtitle.getText().length() > 0) {
                 subtitle.setText(subtitle.getText() + " total");
             }
-            subtitle.setAlign("left");
             HICSSObject subtitleStyle = new HICSSObject();
             subtitleStyle.setFontFamily("Arial");
             subtitleStyle.setFontSize("10px");
